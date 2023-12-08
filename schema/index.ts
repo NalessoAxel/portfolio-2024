@@ -1,4 +1,3 @@
-import blockContent from './blockContent'
-import post from './post'
+import project from './project-schema';
 
-export const schemaTypes = [post, blockContent]
+export const schemaTypes = [ project ];
