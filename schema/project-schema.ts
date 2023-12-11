@@ -9,6 +9,16 @@ const project = {
 			type: 'string',
 		},
 		{
+			name: 'subTitle',
+			title: 'SubTitle',
+			type: 'string',
+		},
+		{
+			name: 'client',
+			title: 'Client',
+			type: 'string',
+		},
+		{
 			name: 'slug',
 			title: 'Slug',
 			type: 'slug',
@@ -38,6 +48,11 @@ const project = {
 		{
 			name: 'position',
 			title: 'Position',
+			type: 'string',
+		},
+		{
+			name: 'titlePosition',
+			title: 'TitlePosition',
 			type: 'string',
 		},
 		{
