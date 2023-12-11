@@ -7,10 +7,21 @@
 		"moduleResolution": "node",
 		"strict": true,
 		"esModuleInterop": true,
-		"allowSyntheticDefaultImports": true,
 		"resolveJsonModule": true,
 		"isolatedModules": true,
-		"jsx": "react"
+		"jsx": "react",
+		"baseUrl": ".",
+		"paths": {
+			"@components/*": ["src/components/*"],
+			"@layouts/*": ["src/layouts/*"],
+			"@pages/*": ["src/pages/*"],
+			"@utils/*": ["src/utils/*"],
+			"@lib/*": ["src/lib/*"],
+			"@config/*": ["src/config/*"]
+		}
+	},
+	"parserOptions": {
+		"sourceType": "module"
 	},
 	"includes": ["**/*.ts", "**/*.tsx"],
 	"exclude": ["node_modules", "dist", ".vercel"]

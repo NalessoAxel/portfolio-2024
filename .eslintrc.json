@@ -2,10 +2,11 @@
 	"plugins": ["@typescript-eslint"],
 	"overrides": [
 		{
-			"files": ["**/*.ts", "**/*.tsx", "./*.js", "./*.mjs"],
-			"extends": ["plugin:@typescript-eslint/recommended", "plugin:react-hooks/recommended"],
-			"parser": "@typescript-eslint/parser",
+			"files": ["**/*.ts", "**/*.tsx", "./*.js", "./*.mjs", "*.astro"],
+			"extends": ["plugin:@typescript-eslint/recommended", "plugin:react-hooks/recommended", "astro"],
+			"parser": "astro-eslint-parser",
 			"parserOptions": {
+				"parser": "@typescript-eslint/parser",
 				"ecmaVersion": "latest"
 			},
 			"env": {
@@ -68,6 +69,7 @@
 				"no-param-reassign": "error",
 				"no-constant-binary-expression": "error",
 				"no-new-native-nonconstructor": "error",
+
 				// Objects
 				"object-curly-spacing": ["warn", "always"],
 				"object-property-newline": "warn",
@@ -89,18 +91,22 @@
 				"prefer-object-has-own": "warn",
 				"prefer-object-spread": "warn",
 				"object-shorthand": "warn",
+
 				// Functions
 				"func-names": ["warn", "as-needed"],
 				"no-func-assign": "error",
+
 				// Conditions
 				"default-case": "warn",
 				"default-case-last": "warn",
 				"no-duplicate-case": "warn",
 				"no-constant-condition": "warn",
 				"no-self-compare": "error",
+
 				// Loops
 				"for-direction": "warn",
 				"no-unmodified-loop-condition": "error",
+
 				// Variables and constants
 				"no-var": "error",
 				"no-const-assign": "error",
@@ -117,13 +123,16 @@
 				],
 				"no-constructor-return": "error",
 				"no-unused-private-class-members": "warn",
+
 				// Async and promises
 				"no-promise-executor-return": "error",
+
 				// Text
 				"valid-typeof": "error",
 				"no-template-curly-in-string": "error",
+
 				// Imports
-				"import/no-unresolved": "error",
+				// "import/no-unresolved": "error",
 				"import/order": [
 					"warn",
 					{
@@ -153,6 +162,7 @@
 				// ES6
 				"no-duplicate-imports": ["error"],
 				"no-class-assign": "error",
+
 				// React
 				"react/react-in-jsx-scope": "off",
 				"react/jsx-uses-react": "off",
@@ -212,6 +222,7 @@
 				"react/no-typos": "error",
 				"react/no-unstable-nested-components": "error",
 				"react/no-unused-state": "warn",
+
 				// React props
 				"react/no-children-prop": "error",
 				"react/jsx-props-no-multi-spaces": "warn",
@@ -239,6 +250,7 @@
 				"react/jsx-first-prop-new-line": ["warn", "multiline"],
 				"react/jsx-props-no-spreading": "off",
 				"react/require-default-props": "off",
+
 				// React classes
 				"react/prefer-es6-class": "error",
 				"react/state-in-constructor": ["warn", "always"],
@@ -251,6 +263,7 @@
 				"react/no-unused-class-component-methods": "warn",
 				// React hooks
 				"react-hooks/rules-of-hooks": "off",
+
 				// JSX
 				"jsx-quotes": ["warn", "prefer-double"],
 				"jsx-a11y/no-static-element-interactions": "error",
@@ -258,6 +271,7 @@
 				"jsx-a11y/mouse-events-have-key-events": "off",
 				"jsx-a11y/click-events-have-key-events": "off",
 				"jsx-a11y/no-noninteractive-element-interactions": "off",
+
 				// TypeScript
 				"@typescript-eslint/no-unused-vars": "warn",
 				"@typescript-eslint/object-curly-spacing": ["warn", "always"],

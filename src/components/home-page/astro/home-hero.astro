@@ -1,0 +1,26 @@
+---
+
+import { Image } from 'astro:assets';
+import classNames from 'classnames';
+const headingH1 = classNames(
+	'uppercase font-semibold font-title text-[6rem] text-title tracking-[0.3rem]'
+);
+
+---
+	<section class="flex gap-2 relative min-h-[calc(100vh-128px)]">
+		<div class="flex min-h-full items-end">
+			<h1 class={ headingH1 } >
+				Web Designer & Front-End Developer
+			</h1>
+		</div>
+
+		<div class="w-full min-h-[full] relative">
+			<Image
+				alt="Profil image of Axel Code"
+				class="w-full h-full object-cover"
+				width={500}
+				height={500}
+				src="/images/jpg/axel_profile.jpg"
+			/>
+		</div>
+	</section>

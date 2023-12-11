@@ -1,9 +1,16 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import HomeHero from '@components/home-page/astro/home-hero.astro';
+import HowIWork from '@components/home-page/jsx/how-i-work';
+import SectionNumbers from '@components/home-page/jsx/numbers';
+import RecentWork from '@components/home-page/jsx/recent-work';
+import Layout from '@layouts/Layout.astro';
 ---
 
 <Layout title="Axel Code Porfolio - Home">
 	<main data-scroll-section>
-		<h1 class="min-h-[400vh]">Welcome to Astro.</h1>
+		<HomeHero client:load  />
+		<SectionNumbers client:load />
+		<HowIWork client:load />
+		<RecentWork client:load />
 	</main>
-		
+</Layout>
