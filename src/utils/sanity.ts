@@ -3,7 +3,7 @@ import { useSanityClient } from '@sanity/astro';
 import type { ImageAsset, Slug } from '@sanity/types';
 import groq from 'groq';
 
-export async function getPosts(): Promise<Post[]> {
+export async function getPro(): Promise<Post[]> {
 	return await useSanityClient().fetch(
 		groq`*[_type == "post" && defined(slug.current)] | order(_createdAt desc)`
 	);

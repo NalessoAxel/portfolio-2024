@@ -26,7 +26,9 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   // Hybrid+adapter is required to support embedded Sanity Studio
   output: 'hybrid',
-  adapter: vercel(),
+  adapter: vercel({
+	functionPerRoute: false
+  }),
   integrations: [sanity({
     projectId,
     dataset,
@@ -34,6 +36,5 @@ export default defineConfig({
     useCdn: false,
     // `false` if you want to ensure fresh data
     apiVersion: '2023-03-20' // Set to date of setup to use the latest API version
-  }), react() // Required for Sanity Studio
-  , tailwind()]
+  }), react(), tailwind()]
 });

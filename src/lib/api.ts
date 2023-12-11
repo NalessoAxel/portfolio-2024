@@ -1,5 +1,4 @@
-/* eslint-disable require-await */
-import { useSanityClient } from 'astro-sanity';
+import { useSanityClient } from "@sanity/astro";
 import groq from 'groq';
 
 
@@ -8,7 +7,7 @@ import type { project } from './../types/project-type';
 
 export async function getProjects (): Promise<project[]> {
 	
-	return useSanityClient().fetch(
+	return  useSanityClient().fetch(
 		groq`*[_type == "project"]{
 			_id,
 			_createdAt,

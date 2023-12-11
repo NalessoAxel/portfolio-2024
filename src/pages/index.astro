@@ -1,16 +1,28 @@
 ---
+import AboutMe from '@components/home-page/astro/about-me.astro';
 import HomeHero from '@components/home-page/astro/home-hero.astro';
+import Contact from '@components/home-page/jsx/contact';
 import HowIWork from '@components/home-page/jsx/how-i-work';
 import SectionNumbers from '@components/home-page/jsx/numbers';
 import RecentWork from '@components/home-page/jsx/recent-work';
+import WorksHome from '@components/home-page/jsx/works-home';
 import Layout from '@layouts/Layout.astro';
+
+import { getProjects } from '@lib/api';
+
+const projects = await getProjects();
+
+
 ---
 
 <Layout title="Axel Code Porfolio - Home">
 	<main data-scroll-section>
-		<HomeHero client:load  />
+		<HomeHero   />
 		<SectionNumbers client:load />
 		<HowIWork client:load />
 		<RecentWork client:load />
+		<WorksHome projects={projects}  />
+		<AboutMe />
 	</main>
 </Layout>
+<Contact client:load />
