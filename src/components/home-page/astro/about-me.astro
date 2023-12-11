@@ -1,0 +1,27 @@
+---
+import { Image } from 'astro:assets';
+
+import AboutTitle from './../../utils/about-title.astro';
+
+---
+	
+		<section class="flex min-h-full justify-between gap-16">
+			
+				<Image
+					alt="Profil image of Axel Code"
+					width={649}
+					src="/images/jpg/about_img.jpg"
+					height={702}
+		
+				/>
+			
+
+			<div class="flex flex-col items-start justify-center h-full ">
+				<AboutTitle />
+				<p class="text-4xl font-body tracking-wide font-normal text-title w-full  pt-32">
+					Hello world, i’m Axel Nalesso a web developer and web designer based in Brussels, Belgium.I work as a freelancer. I help people, small buisiness or established buissiness to have a nice and quality prescense on the web.
+				</p>
+			</div>
+		</section>
+
+
