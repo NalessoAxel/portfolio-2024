@@ -1,11 +1,11 @@
 import React from 'react';
 
-import  { type project } from './../../../types/project-type';
+import  { type project } from '../../types/project-type';
 
 
 interface WorksHomeProps {
 	projects: Array<project>;
-  };
+};
 
 const WorksHomeComp: React.FC<WorksHomeProps> = (props: WorksHomeProps) => {
 	const { projects } = props;
@@ -20,6 +20,7 @@ const WorksHomeComp: React.FC<WorksHomeProps> = (props: WorksHomeProps) => {
 	});
 
 	const reverseSortArr = sortArr.reverse();
+
 	return (
 		<div className="flex flex-col gap-16 pb-32">
 			{ reverseSortArr.slice(0, 3).map((project) => (

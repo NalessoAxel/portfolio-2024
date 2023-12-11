@@ -1,0 +1,40 @@
+---
+import { type InferGetStaticParamsType } from "astro/dist/@types/astro";
+import Layout from "./../../layouts/Layout.astro";
+
+import { PortableText } from "astro-portabletext";
+import { getProject, getProjects } from "./../../lib/api";
+
+export async function getStaticPaths() {
+	const projects = await getProjects();
+	
+	return projects.map((project) => ({
+		params: {
+			slug: project.slug
+		}
+	}))
+	
+	
+}
+
+type Params = InferGetStaticParamsType<typeof getStaticPaths>;
+
+const { slug } = Astro.params as Params;
+
+const projectSlug = await getProject(slug);
+
+---
+
+<Layout title=`Axel Code Porfolio - Works - ${projectSlug.slug}`>
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<h1>{projectSlug.title}</h1>
+				<PortableText value={projectSlug.content}/>
+			</div>
+		</div>
+	</div>
+
+</Layout>
+
+
