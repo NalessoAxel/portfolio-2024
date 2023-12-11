@@ -14,6 +14,11 @@ const project = {
 			type: 'string',
 		},
 		{
+			name: 'client',
+			title: 'Client',
+			type: 'string',
+		},
+		{
 			name: 'slug',
 			title: 'Slug',
 			type: 'slug',

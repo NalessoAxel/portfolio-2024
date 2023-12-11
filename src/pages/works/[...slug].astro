@@ -1,9 +1,11 @@
 ---
-import { type InferGetStaticParamsType } from "astro/dist/@types/astro";
-import Layout from "./../../layouts/Layout.astro";
-
 import { PortableText } from "astro-portabletext";
+import { type InferGetStaticParamsType } from "astro/dist/@types/astro";
+import { Image } from "astro:assets";
+import Layout from "./../../layouts/Layout.astro";
 import { getProject, getProjects } from "./../../lib/api";
+
+import { formatDate } from "./../../utils";
 
 export async function getStaticPaths() {
 	const projects = await getProjects();
@@ -22,18 +24,33 @@ type Params = InferGetStaticParamsType<typeof getStaticPaths>;
 const { slug } = Astro.params as Params;
 
 const projectSlug = await getProject(slug);
+console.log(projectSlug)
+
+const date = formatDate(projectSlug.releaseDate.toString());
+console.log(date)
 
 ---
 
-<Layout title=`Axel Code Porfolio - Works - ${projectSlug.slug}`>
-	<div class="container">
-		<div class="row">
-			<div class="col-12">
-				<h1>{projectSlug.title}</h1>
-				<PortableText value={projectSlug.content}/>
+<Layout title=`Axel Code Porfolio - Works - ${projectSlug.title}`>
+	<header class="container relative my-16">
+		<Image width="1800" height="400"  src={projectSlug.image} alt={projectSlug.alt} class="object-cover object-top max-h-[430px]" />
+	</header>
+
+	<section class="container flex flex-col gap-8 px-32" data-scroll-section>
+		<h2 class="text-[32px] font-title text-title font-semibold">{projectSlug.subTitle}</h2>
+
+			<div class="flex gap-2 divide-x-2">
+				<p class="text-2xl font-medium font-body text-title pr-2 ring-r-2">Client: {projectSlug.client}</p>
+					
+				<p class="text-2xl font-medium font-body text-title  px-2 ">Year:{date}</p>
+
+				<a href={projectSlug.url} class="text-2xl font-medium font-body text-title  px-2 " target="_blank">See the website live</a>
 			</div>
-		</div>
-	</div>
+
+			<h2 class="text-[32px] font-title text-title font-semibold">{projectSlug.titlePosition}</h2>
+
+			<PortableText value={projectSlug.content} class="text-2xl leading-10 tracking-wide text-title"/>
+	</section>
 
 </Layout>
 

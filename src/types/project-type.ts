@@ -5,6 +5,7 @@ export type project = {
 	_createdAt: string;
 	title: string;
 	subTitle: string;
+	client: string;
 	slug: string;
 	image: string;
 	alt: string;
