@@ -15,8 +15,6 @@ export async function getStaticPaths() {
 			slug: project.slug
 		}
 	}))
-	
-	
 }
 
 type Params = InferGetStaticParamsType<typeof getStaticPaths>;
@@ -24,10 +22,10 @@ type Params = InferGetStaticParamsType<typeof getStaticPaths>;
 const { slug } = Astro.params as Params;
 
 const projectSlug = await getProject(slug);
-console.log(projectSlug)
+
 
 const date = formatDate(projectSlug.releaseDate.toString());
-console.log(date)
+
 
 ---
 
