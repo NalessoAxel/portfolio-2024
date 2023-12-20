@@ -1,6 +1,7 @@
 import React from 'react';
 
 import  { type project } from '../../types/project-type';
+import Button from '@components/ui/button';
 
 
 interface WorksHomeProps {
@@ -49,12 +50,12 @@ const WorksHomeComp: React.FC<WorksHomeProps> = (props: WorksHomeProps) => {
 					href="/works"
 					
 				>
-					<button
-						className="text-xl font-title bg-title text-white uppercase font-bold  ring-2 ring-title rounded-full  p-4"
+					<Button
+						className="text-xl font-title bg-title text-white uppercase font-bold ring-2 ring-title rounded-full  p-4"
 						type="button"
 					>
 						See All My Works
-					</button>
+					</Button>
 				</a>
 			</div>
 		</div>

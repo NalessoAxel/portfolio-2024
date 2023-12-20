@@ -1,8 +1,15 @@
 ---
-import Layout from "@layouts/Layout.astro";
+import Layout from '@layouts/Layout.astro';
+
+import { getProjects } from '@lib/api';
+
+const projects = await getProjects();
+
 
 ---
 
-<Layout title="Axel Code Portfolio - Works">
-	
+<Layout title="Axel Code Porfolio - Home" >
+	<main data-scroll-section class="container">
+		work page
+	</main>
 </Layout>
