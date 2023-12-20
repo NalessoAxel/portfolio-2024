@@ -10,41 +10,24 @@ type NavProps = {
 
 const NavItem = ({ children, to = '/', dataLetters }:NavProps) => {
 	
-	const link = classNames({
-		'overflow-hidden': true,
-		'h-8': true,
-		'px-4': true,
-	});
+	const link = classNames(
+		'overflow-hidden h-8 px-4'
+	);
 
-	const paragraphEffect = classNames({
-		relative: true,
-		'inline-block': true,
-		transition: true,
-		transform: true,
-		'duration-300': true,
-		'text-2xl': true,
-		'font-body': true,
-		'text-title': true,
-		'capitalize': true,
+	const paragraphEffect = classNames(
+		'relative inline-block transition transform duration-300 text-2xl font-body text-title capitalize uppercase',
+		
 
 		//before
-		'before:absolute': true,
-		'before:top-full': true,
-		'before:content-[attr(data-hover)]': true,
-		'before:transform': true,
-		'before:translate-z': true,
-		'before:font-bold': true,
-		uppercase: true,
+		'before:absolute before:top-full before:content-[attr(data-hover)] before:transform before:translate-z before:font-bold',
+		
 
 		//hover
-		'hover:transform': true,
-		'hover:-translate-y-full': true,
-		'hover:before:underline': true,
+		'hover:transform hover:-translate-y-full hover:before:underline',
 
 		//focus
-		'focus:transform': true,
-		'focus:-translate-y-full': true,
-	});
+		'focus:transform focus:-translate-y-full'
+	);
 
 	return (
 		<a

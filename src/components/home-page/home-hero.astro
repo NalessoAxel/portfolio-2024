@@ -7,20 +7,21 @@ const headingH1 = classNames(
 );
 
 ---
-	<section class="flex gap-2 relative min-h-[calc(100vh-128px)]">
-		<div class="flex min-h-full items-end">
+	<section class="flex gap-2 relative min-h-[calc(100vh-128px)]" data-scroll-section>
+		<div class="flex min-h-full items-end" data-scroll data-scroll-speed="0.5">
 			<h1 class={ headingH1 } >
 				Web Designer & Front-End Developer
 			</h1>
 		</div>
 
-		<div class="w-full min-h-[full] relative">
+		<div class="w-full min-h-[full]">
 			<Image
 				alt="Profil image of Axel Code"
 				class="w-full h-full object-cover"
 				width={500}
 				height={500}
 				src="/images/jpg/axel_profile.jpg"
+				data-scroll  data-scroll-speed="-0.1"
 			/>
 		</div>
 	</section>
