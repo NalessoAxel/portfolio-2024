@@ -51,8 +51,9 @@ const WorksHomeComp: React.FC<WorksHomeProps> = (props: WorksHomeProps) => {
 					
 				>
 					<Button
-						className="text-xl font-title bg-title text-white uppercase font-bold ring-2 ring-title rounded-full  p-4"
+						className="text-xl font-title bg-title text-white uppercase font-bold ring-2 ring-title rounded-full p-4"
 						type="button"
+						
 					>
 						See All My Works
 					</Button>

@@ -1,6 +1,6 @@
 ---
 import { SiteFooter } from '../components/site-footer';
-import SiteNavigation from '../components/site-navigation.astro';
+import SiteNavigation from '../components/site-navigation';
 
 
 interface Props {
@@ -50,12 +50,11 @@ document.addEventListener('DOMContentLoaded', () => {
 		<title>{title}</title>
 	</head>
 	<body class="bg-body" data-scroll-container>
-		<SiteNavigation />
+		<SiteNavigation client:load />
 			<slot />
-		<SiteFooter />
+		<SiteFooter client:load />
 	</body>
 </html>
 
 
 	
-
